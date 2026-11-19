@@ -855,3 +855,106 @@
     grid-template-columns: 1fr;
   }
 }
+
+  .section-testimonials{
+    padding:clamp(90px, 16vh, 170px) clamp(20px, 4vw, 52px);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    min-height:85vh;
+    background:#303c2a;
+    color:#f0f0ea;
+  }
+
+  .testimonial-stage{
+    max-width:min(960px, 92vw);
+    transition:opacity .22s ease, transform .22s ease;
+    opacity:1;
+  }
+  .testimonial-stage.is-fading{
+    opacity:0;
+    transform:translateY(6px);
+  }
+
+  .testimonial-quote{
+    margin:0;
+    font-family:"Plus Jakarta Sans", system-ui, sans-serif;
+    font-weight:400;
+    font-size:clamp(1.4rem, 3.1vw, 2.6rem);
+    line-height:1.42;
+    letter-spacing:-.02em;
+    color:#f0f0ea;
+    text-wrap:balance;
+  }
+
+  .testimonial-author{
+    margin-top:clamp(32px, 5vh, 52px);
+    display:flex;
+    flex-direction:column;
+    gap:.45rem;
+  }
+
+  .testimonial-name{
+    font-family:"Plus Jakarta Sans", system-ui, sans-serif;
+    font-weight:700;
+    font-size:clamp(.82rem, 1vw, .95rem);
+    letter-spacing:.02em;
+    color:#f0f0ea;
+  }
+
+  .testimonial-role{
+    font-family:"Plus Jakarta Sans", system-ui, sans-serif;
+    font-weight:400;
+    font-size:clamp(.72rem, .88vw, .82rem);
+    letter-spacing:.01em;
+    opacity:.55;
+  }
+
+  .testimonial-controls{
+    margin-top:clamp(44px, 7vh, 76px);
+    display:flex;
+    align-items:center;
+    gap:clamp(16px, 2vw, 24px);
+  }
+
+  .testimonial-btn{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    border:none;
+    background:#f0f0ea;
+    color:#303c2a;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-family:"Plus Jakarta Sans", system-ui, sans-serif;
+    font-size:1.05rem;
+    cursor:pointer;
+    transition:transform .2s ease, background .2s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .testimonial-btn:hover{transform:scale(1.06);background:#ffffff;}
+  .testimonial-btn:active{transform:scale(.95);}
+  .testimonial-btn:focus-visible{outline:2px solid #f0f0ea;outline-offset:3px;}
+
+  .testimonial-counter{
+    font-family:"Plus Jakarta Sans", system-ui, sans-serif;
+    font-size:.72rem;
+    letter-spacing:.18em;
+    opacity:.55;
+    min-width:52px;
+    text-align:center;
+    font-variant-numeric:tabular-nums;
+  }
+
+  @media (max-width:600px){
+    .testimonial-btn{width:46px;height:46px;font-size:.95rem;}
+    .testimonial-quote{font-size:clamp(1.15rem, 5vw, 1.6rem);line-height:1.5;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .testimonial-stage{transition:none;}
+    .testimonial-btn{transition:none;}
+  }
